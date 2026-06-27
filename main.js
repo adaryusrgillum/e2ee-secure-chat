@@ -111,7 +111,7 @@ ipcMain.on('send-message', (event, targetUser, msgText) => {
 
 ipcMain.on('invite-user', () => {
   const subject = encodeURIComponent("Join my secure chat server!");
-  const body = encodeURIComponent(`Hey!\n\nJoin me on my End-to-End Encrypted chat server.\n\n1. Download the App here: [INSERT DOWNLOAD LINK HERE]\n2. Server URL: ${serverUrl}\n\nDownload the app and connect using this URL to chat securely.`);
+  const body = encodeURIComponent(`Hey!\n\nJoin me on my End-to-End Encrypted chat server.\n\n1. Download the App here: https://github.com/adaryusrgillum/e2ee-secure-chat/releases/download/v1.1.0/E2EE-App-v1.1.0.zip\n2. Server URL: ${serverUrl}\n\nDownload the app and connect using this URL to chat securely.`);
   shell.openExternal(`mailto:?subject=${subject}&body=${body}`);
 });
 
