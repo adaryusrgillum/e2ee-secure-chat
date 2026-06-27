@@ -1,0 +1,4 @@
+node_modules/
+dist/
+*.log
+E2EE-App.zip

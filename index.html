@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E2EE Secure Chat</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Login Overlay -->
+  <div id="login-screen" class="overlay">
+    <div class="modal">
+      <h1>Secure Setup</h1>
+      <p>Connect to the E2EE network</p>
+      
+      <div class="input-group">
+        <label>Your Username</label>
+        <input type="text" id="login-username" placeholder="Alice">
+      </div>
+
+      <div class="input-group">
+        <label>Server URL</label>
+        <input type="text" id="login-server" value="ws://localhost:8080">
+      </div>
+
+      <button id="btn-connect">Connect & Generate Keys</button>
+      <div id="login-error" class="error-msg"></div>
+    </div>
+  </div>
+
+  <!-- Main App Layout -->
+  <div id="app" class="hidden">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="sidebar-header">
+        <h2>Messages</h2>
+        <button id="btn-invite" class="icon-btn" title="Invite a friend">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><line x1="20" y1="8" x2="20" y2="14"></line><line x1="23" y1="11" x2="17" y2="11"></line></svg>
+        </button>
+      </div>
+      
+      <div class="contact-list" id="contact-list">
+        <!-- Contacts will populate here -->
+      </div>
+    </div>
+
+    <!-- Chat Area -->
+    <div class="chat-area">
+      <div class="chat-header">
+        <h3 id="current-chat-title">Select a contact to start chatting</h3>
+      </div>
+      
+      <div class="messages" id="messages-container">
+        <!-- Messages will go here -->
+      </div>
+
+      <div class="chat-input-area">
+        <input type="text" id="chat-input" placeholder="Type a message..." disabled>
+        <button id="btn-send" disabled>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="renderer.js"></script>
+</body>
+</html>
