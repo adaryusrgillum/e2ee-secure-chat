@@ -5,9 +5,9 @@
 }
 
 body {
-  font-family: 'Inter', sans-serif;
-  background-color: #121216;
-  color: #e4e4e7;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #ffffff;
+  color: #050505;
   height: 100vh;
   overflow: hidden;
 }
@@ -20,7 +20,7 @@ body {
 .overlay {
   position: absolute;
   top: 0; left: 0; width: 100%; height: 100%;
-  background: rgba(18, 18, 22, 0.95);
+  background: rgba(255, 255, 255, 0.95);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,16 +28,17 @@ body {
 }
 
 .modal {
-  background: #1e1e24;
+  background: #ffffff;
   padding: 40px;
   border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.1);
   width: 400px;
   text-align: center;
+  border: 1px solid #e4e6eb;
 }
 
-.modal h1 { margin-bottom: 10px; font-size: 24px; color: #fff; }
-.modal p { margin-bottom: 30px; color: #a1a1aa; font-size: 14px; }
+.modal h1 { margin-bottom: 10px; font-size: 24px; color: #050505; }
+.modal p { margin-bottom: 30px; color: #65676b; font-size: 14px; }
 
 .input-group {
   margin-bottom: 20px;
@@ -48,7 +49,7 @@ body {
   display: block;
   font-size: 12px;
   font-weight: 600;
-  color: #a1a1aa;
+  color: #65676b;
   margin-bottom: 8px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -56,67 +57,75 @@ body {
 
 input {
   width: 100%;
-  background: #27272f;
-  border: 1px solid #3f3f46;
-  color: #fff;
-  padding: 12px;
-  border-radius: 6px;
+  background: #f0f2f5;
+  border: 1px solid transparent;
+  color: #050505;
+  padding: 12px 16px;
+  border-radius: 20px;
   font-family: 'Inter', sans-serif;
   outline: none;
-  transition: border-color 0.2s;
+  transition: background 0.2s, border-color 0.2s;
 }
 
 input:focus {
-  border-color: #6366f1;
+  background: #ffffff;
+  border-color: #00C853;
+  box-shadow: 0 0 0 2px rgba(0, 200, 83, 0.2);
 }
 
 button {
-  background: #6366f1;
+  background: #00C853;
   color: #fff;
   border: none;
   padding: 12px 24px;
   width: 100%;
-  border-radius: 6px;
+  border-radius: 20px;
   font-weight: 600;
   cursor: pointer;
   transition: background 0.2s;
 }
 
-button:hover { background: #4f46e5; }
-.error-msg { color: #ef4444; margin-top: 15px; font-size: 14px; }
+button:hover { background: #00b34a; }
+button:disabled { background: #99e6b6; cursor: not-allowed; }
+.error-msg { color: #e41e3f; margin-top: 15px; font-size: 14px; }
 
 /* Main App */
 #app {
   display: flex;
   height: 100vh;
+  background: #ffffff;
 }
 
 /* Sidebar */
 .sidebar {
-  width: 280px;
-  background: #18181c;
-  border-right: 1px solid #27272f;
+  width: 320px;
+  background: #ffffff;
+  border-right: 1px solid #e4e6eb;
   display: flex;
   flex-direction: column;
 }
 
 .sidebar-header {
   padding: 20px;
-  border-bottom: 1px solid #27272f;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.sidebar-header h2 { font-size: 16px; color: #fff; }
+.sidebar-header h2 { font-size: 24px; color: #050505; font-weight: 700; }
 
 .icon-btn {
-  background: transparent;
-  width: auto;
+  background: #f0f2f5;
+  width: 36px;
+  height: 36px;
   padding: 8px;
-  color: #a1a1aa;
+  border-radius: 50%;
+  color: #050505;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.icon-btn:hover { background: #27272f; color: #fff; }
+.icon-btn:hover { background: #e4e6eb; }
 
 .contact-list {
   flex: 1;
@@ -125,39 +134,45 @@ button:hover { background: #4f46e5; }
 }
 
 .contact {
-  padding: 12px 15px;
-  border-radius: 6px;
+  padding: 10px;
+  border-radius: 8px;
   cursor: pointer;
-  margin-bottom: 5px;
+  margin-bottom: 2px;
   display: flex;
   align-items: center;
   transition: background 0.2s;
 }
-.contact:hover { background: #27272f; }
-.contact.active { background: #6366f1; color: #fff; }
+.contact:hover { background: #f0f2f5; }
+.contact.active { background: #e6f4ea; color: #00C853; font-weight: 600; }
 
 .contact .avatar {
-  width: 35px; height: 35px;
+  width: 40px; height: 40px;
   border-radius: 50%;
-  background: #3f3f46;
+  background: #e4e6eb;
+  color: #050505;
   display: flex; justify-content: center; align-items: center;
-  margin-right: 15px;
+  margin-right: 12px;
   font-weight: bold;
 }
-.contact.active .avatar { background: rgba(255,255,255,0.2); }
+.contact.active .avatar { background: #00C853; color: #ffffff; }
 
 /* Chat Area */
 .chat-area {
   flex: 1;
   display: flex;
   flex-direction: column;
-  background: #1e1e24;
+  background: #ffffff;
 }
 
 .chat-header {
-  padding: 20px;
-  border-bottom: 1px solid #27272f;
+  padding: 15px 20px;
+  border-bottom: 1px solid #e4e6eb;
+  display: flex;
+  align-items: center;
+  height: 69px; /* align with sidebar header */
 }
+
+.chat-header h3 { font-size: 16px; color: #050505; font-weight: 600; }
 
 .messages {
   flex: 1;
@@ -168,46 +183,64 @@ button:hover { background: #4f46e5; }
 }
 
 .msg {
-  max-width: 70%;
+  max-width: 65%;
   padding: 12px 16px;
   border-radius: 18px;
-  margin-bottom: 15px;
+  margin-bottom: 4px;
   font-size: 15px;
-  line-height: 1.4;
+  line-height: 1.3;
   word-wrap: break-word;
 }
 
 .msg.received {
-  background: #27272f;
+  background: #e4e6eb;
+  color: #050505;
   align-self: flex-start;
   border-bottom-left-radius: 4px;
 }
 
 .msg.sent {
-  background: #6366f1;
-  color: #fff;
+  background: #00C853;
+  color: #ffffff;
   align-self: flex-end;
   border-bottom-right-radius: 4px;
 }
 
+/* Grouping bubbles logic (if implemented in JS, usually margin changes. Here we just space them) */
+.msg + .msg { margin-top: 2px; }
+.msg.sent + .msg.received { margin-top: 15px; }
+.msg.received + .msg.sent { margin-top: 15px; }
+
 .chat-input-area {
-  padding: 20px;
-  background: #1e1e24;
-  border-top: 1px solid #27272f;
+  padding: 15px 20px;
+  background: #ffffff;
   display: flex;
-  gap: 15px;
+  gap: 10px;
+  align-items: center;
 }
 
 .chat-input-area input {
   flex: 1;
+  padding: 14px 20px;
+  border-radius: 24px;
+  background: #f0f2f5;
 }
 
 .chat-input-area button {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
   padding: 0;
+  background: transparent;
+  color: #00C853;
+}
+.chat-input-area button:hover {
+  background: #f0f2f5;
+}
+.chat-input-area button:disabled {
+  color: #bcc0c4;
+  background: transparent;
 }
